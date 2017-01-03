@@ -1,0 +1,24 @@
+{
+  "name": "kulututo",
+  "authors": [
+    "abahyann <abahyann>"
+  ],
+  "description": "lib for upload image",
+  "main": "",
+  "keywords": [
+    "jobert"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "cloudinary_ng": "^1.0.0"
+  }
+}

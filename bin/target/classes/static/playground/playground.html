@@ -1,0 +1,153 @@
+<!--
+
+Workaround for one route, many views
+
+From http://stackoverflow.com/questions/13681116/angularjs-dynamic-routing ...
+
+In the $routeProvider URI patters, you can specify variable parameters, like so: $routeProvider.when('/page/:pageNumber' ... , and access it in your controller via $routeParams.
+
+There is a good example at the end of the $route page: http://docs.angularjs.org/api/ng.$route
+
+EDIT (for the edited question):
+
+The routing system is unfortunately very limited - there is a lot of discussion on this topic, and some solutions have been proposed, namely via creating multiple named views, etc.. But right now, the ngView directive serves only ONE view per route, on a one-to-one basis. You can go about this in multiple ways - the simpler one would be to use the view's template as a loader, with a <ng-include src="myTemplateUrl"></ng-include> tag in it ($scope.myTemplateUrl would be created in the controller).
+
+I use a more complex (but cleaner, for larger and more complicated problems) solution, basically skipping the $route service altogether, that is detailed here:
+
+http://www.bennadel.com/blog/2420-Mapping-AngularJS-Routes-Onto-URL-Parameters-And-Client-Side-Events.htm
+
+-->
+
+<div class="container" fade-in>
+	<h1>
+		<div class="col-sm-6">Cours -> {{widgetName}}</div>
+		<div class="col-sm-6">
+			<img style="opacity: 0.3" src="java.png" width="200" height="150"
+				alt="java" />
+		</div>
+	</h1>
+
+	<hr>
+	<div class="ng-include: widgetUrl"></div>
+	<br />
+
+
+	<div class="form-group" style="padding-top: 20px; width: 75%">
+
+
+		<div class="row">
+<a><h5>{{courArg.coursCmts.length}} Comments:</h5></a>
+			<hr>
+
+
+		</div>
+
+<!-- 		<div class="pull-right" style="padding-top: 10px"> -->
+
+<!-- 			<button class="btn btn-primary btn-block" -->
+<!-- 				style="width: 100%; padding-right: 7px; padding-left: 7px" -->
+<!-- 				ng-click="saveCmt(cText,courArg.id,user.id)">{{'POST' |translate }}</button> -->
+<!-- 		</div> -->
+<!-- 		<br /> -->
+		<div class="container">
+			<div class="row" ng-repeat="coursCmt in courArg.coursCmts"
+				ng-init="userInfo(coursCmt)">
+
+				<div class="col-sm-1 col-xs-2">
+					<div class="thumbnail">
+						<img class="img-responsive user-photo"
+							ng-src="{{coursCmt.imagePath || 'defaultimage.png'}} ">
+					</div>
+					<!-- /thumbnail -->
+				</div>
+				<!-- /col-sm-1 -->
+
+				<div class="col-sm-11 col-xs-10" style="padding-left: 10px">
+					<div>
+						<div>
+							<strong>{{coursCmt.username}}</strong>
+						</div>
+						<div>{{coursCmt.cText}}</div>
+						<!-- /panel-body -->
+						<small><a style="color: #0088cc" >Mi piace</a>&nbsp&nbsp&nbsp&nbsp<a
+							class="risposta" style="color: #0088cc;"    ng-click="cmtText(coursCmt.cId,coursCmt)" >Rispondi</a>&nbsp&nbsp&nbsp&nbsp<span
+							class="text-muted"> {{coursCmt.cWhen | date:'MMM d, y h:mm:ss a '}}</span></small>
+					</div>
+					<!-- /panel panel-default -->
+
+					<div class="row" ng-repeat="replyCmt in coursCmt.replyCmts"
+						ng-init="userReplyInfo(replyCmt)" style="padding-left: 40px">
+						<div class="col-sm-1 col-xs-2">
+							<div class="thumbnail" style="max-width: 70%; max-height: 70%">
+								<img class="img-responsive user-photo"
+									ng-src="{{replyCmt.imagePath || 'defaultimage.png'}}">
+							</div>
+							<!-- /thumbnail -->
+						</div>
+						<!-- /col-sm-1 -->
+
+						<div class="col-sm-11 col-xs-10" style="padding-left: 0px">
+							<div>
+								<div>
+									<strong>{{replyCmt.username}}</strong>
+								</div>
+								<div>{{replyCmt.cText}}</div>
+								<!-- /panel-body -->
+								<small> <a style="color: #0088cc">Mi piace</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+									<span class="text-muted">{{replyCmt.cWhen | date:'MMM d,y h:mm:ss a'}}</span></small>
+							</div>
+
+							<!-- /panel panel-default -->
+						</div>
+
+					</div>
+					<div id="message{{coursCmt.cId}}" style="display:none">
+
+
+						<div class="col-sm-1 col-xs-2" >
+							<img
+								ng-src="{{profileImagePath || 'defaultimage.png'}} " style="max-width: 60%; max-height: 60%">
+						</div>
+						<div class="col-sm-11 col-xs-10">
+							<textarea ng-model="creplyText" class="form-control" rows="1"
+								 style=" width: 95%" ng-enter="saveReplyCmt(creplyText,coursCmt.cId,coursCmt.coursArgsId,coursCmt.userId,user.id)"></textarea>
+						</div>
+
+					</div>
+				</div>
+
+				<!-- /col-sm-5 -->
+			</div>
+
+
+			<!-- /row -->
+
+		</div>
+		<hr>
+		<div class="col-sm-1 col-xs-2">
+				<img class="img-responsive user-photo"
+					ng-src="{{profileImagePath || 'defaultimage.png'}} ">
+			</div>
+			<div class="col-sm-11 col-xs-10">
+				<textarea ng-model="cText" class="form-control" rows="2"
+					id="comment" style="margin-left: 10px; width: 95%" ng-enter="saveCmt(cText,courArg.id,user.id)"></textarea>
+			</div>
+			<br/>
+			<br/>
+			<br/>
+			
+		<!-- /container -->
+
+		<!-- 		<div class="comments-list"> -->
+		<!-- 			<div class="single-comment" -->
+		<!-- 				ng-repeat="comment in listCours.courArgs.coursCmts"> -->
+		<!-- 				<div class="content">{{comment.content}}</div> -->
+		<!-- 				<div class="info"> -->
+		<!-- 					By: <span>{{comment.author}} </span> | On: <span>{{comment.datePublished -->
+		<!-- 						| date:'MM-dd-yy'}}</span> -->
+		<!-- 				</div> -->
+		<!-- 			</div> -->
+		<!-- 		</div> -->
+
+	</div>
+</div>

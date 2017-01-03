@@ -1,0 +1,290 @@
+/** TODO this can be cleaned up, LESSified, and minimized **/
+
+/* just commit to showing the scroll on the right.  otherwise looks funny when
+   navbar is resized horizonally when vertical scroll appears */
+html {
+    overflow-y: scroll;
+}
+
+    /* Let's get this party started */
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+/*        -webkit-border-radius: 10px;
+        border-radius: 10px;*/
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+/*        -webkit-border-radius: 10px;
+        border-radius: 10px;*/
+        background:#ddd; 
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+    ::-webkit-scrollbar-thumb:window-inactive {
+        background: #ddd; 
+    }
+
+/* anchor tags should use pointer like buttons */
+a {
+    cursor: pointer;
+}
+
+/** this allows us to display nothing until angular has applied changes to the dom
+    without this we see what the dom wants to display first, and then get an update
+    within milliseconds once angular is finished. -- it's the "funny flicker effect"
+ **/
+[ng\:cloak], [ng-cloak], .ng-cloak {
+    display: none !important;
+}
+
+/** **
+supports grid feature
+**/
+
+/******** Grid Global ********/
+
+.ngPagerControl .ngPagerButton {
+    /** pagination buttons are pushed down 10px... fix that here... **/
+    margin-top: -10px;
+
+    /** and a little space in between  **/
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.nglabel {
+    display: block;
+    float: left;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.ngNoSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/** better position ngGrid cell contents **/
+.ngCell div {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+/******** Grid ********/
+
+.gridStyle {
+    border: 1px solid rgb(212, 212, 212);
+    /* width: none !important; */
+    height: 420px;
+}
+
+.ngGrid {
+    background-color: rgb(253, 253, 253);
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/******** Header ********/
+
+.ngGroupPanel {
+    background-color: rgb(234, 234, 234);
+    overflow: hidden;
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.ngGroupPanelDescription {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.ngGroupList {
+    list-style-type: none;
+}
+
+/***
+   modal / login / password
+**/
+
+.modal-body {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.modal-body * {
+    display: block;
+    margin: 10px 0 5px 0;
+    width: 95%;
+}
+
+#password {
+    display: inline;
+    float: left;
+    max-width: 69%;
+    min-width: 63px;
+}
+
+
+
+a {
+	color: #474949;
+	text-decoration: none;
+}
+
+#masthead {
+	min-height: 270px;
+	background-color: #000044;
+	color: #aaaacc;
+}
+
+#masthead h1 {
+	font-size: 55px;
+	line-height: 1;
+}
+
+#masthead .well {
+	margin-top: 13%;
+	background-color: #111155;
+	border-color: #000033;
+}
+
+.icon-bar {
+	background-color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+	#masthead h1 {
+		font-size: 100px;
+	}
+}
+
+.navbar-bright {
+	background-color: #111155;
+	color: #fff;
+}
+
+.navbar-bright a, #masthead a, #masthead .lead {
+	color: #aaaacc;
+}
+
+.navbar-bright li>a:hover {
+	background-color: #000033;
+}
+
+.affix-top, .affix {
+	position: static;
+}
+
+@media ( min-width : 979px) {
+	#sidebar.affix-top {
+		position: static;
+		margin-top: 30px;
+		width: 228px;
+	}
+}
+
+#sidebar li.active {
+	border: 0 #eee solid;
+	border-right-width: 4px;
+}
+
+#mainCol h2 {
+	padding-top: 55px;
+	margin-top: -55px;
+}
+
+.css-selector {
+	font-family: 'Font Name', serif;
+}
+
+.selected {
+	background-color: #CFD8DC;
+	color: white;
+}
+
+
+.mbr-buttons {
+	position: relative;
+	-webkit-animation-name: example; /* Chrome, Safari, Opera */
+	-webkit-animation-duration: 10s; /* Chrome, Safari, Opera */
+	-webkit-animation-iteration-count: infinite;
+	/* Chrome, Safari, Opera */
+	animation-name: example;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+/* Standard syntax */
+@keyframes example { 0% {left: 0px; top: 0px;}
+                    
+                    50%{left: 0px; top: 100px;}
+					
+					100%{left: 0px; top: 0px;}
+}
+/* #leftCol { */
+/*     position: relative; */
+/*     animation: leftbar 4s; */
+/*     animation-iteration-count: 1; */
+/* } */
+
+/* @keyframes leftbar { */
+/*     from {top: 400px;} */
+/*     to {top: 0px;} */
+/* } */
+
+#message[data-badge]:after {
+   content:attr(data-badge);
+   position:absolute;
+   top:0px;
+   right:0px;
+   font-size:.7em;
+   background:green;
+   color:white;
+   width:18px;height:18px;
+   text-align:center;
+   line-height:px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}
+
+#notMenu[data-badge]:after {
+   content:attr(data-badge);
+   position:absolute;
+   top:0px;
+   right:0px;
+   font-size:.7em;
+   background:#f39c12;
+   color:white;
+   width:18px;height:18px;
+   text-align:center;
+   line-height:px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}
+#taskMenu[data-badge]:after {
+   content:attr(data-badge);
+   position:absolute;
+   top:0px;
+   right:0px;
+   font-size:.7em;
+   background:#dd4b39;
+   color:white;
+   width:18px;height:18px;
+   text-align:center;
+   line-height:px;
+   border-radius:50%;
+   box-shadow:0 0 1px #333;
+}

@@ -1,0 +1,462 @@
+
+<html>
+<!--<![endif]-->
+
+<head>
+
+
+<script src="https://apis.google.com/js/platform.js" async="async" defer="defer"></script>
+<meta name="google-signin-client_id" content="467716877722-2275pgjhvdd14bdi9fqjdq3ningrppm8.apps.googleusercontent.com"/>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title>Kulu Tuto</title>
+<link rel="shortcut icon" type="images/x-icon" href="favicon.ico"></link>
+<meta name="description" content=""/>
+<meta name="viewport" content="width=device-width"/>
+
+<style>
+body {
+
+}
+
+
+
+#sidebar.affix {
+	position: fixed;
+	top: 70px;
+	width: 228px;
+}
+
+body {
+	padding-top: 50px;
+}
+
+a {
+	color: #474949;
+	text-decoration: none;
+}
+
+#masthead {
+	min-height: 270px;
+	background-color: #000044;
+	color: #aaaacc;
+}
+
+#masthead h1 {
+	font-size: 55px;
+	line-height: 1;
+}
+
+#masthead .well {
+	margin-top: 13%;
+	background-color: #111155;
+	border-color: #000033;
+}
+
+.icon-bar {
+	background-color: #fff;
+}
+
+@media  {
+	#masthead h1 {
+		font-size: 100px;
+	}
+}
+
+.navbar-bright {
+	background-color: #111155;
+	color: #fff;
+}
+
+.navbar-bright a, #masthead a, #masthead .lead {
+	color: #aaaacc;
+}
+
+.navbar-bright li>a:hover {
+	background-color: #000033;
+}
+
+
+
+.affix-top, .affix {
+	position: static;
+}
+
+@media ( min-width : 979px) {
+	#sidebar.affix-top {
+		position: static;
+		margin-top: 30px;
+		width: 228px;
+	}
+}
+
+#sidebar li.active {
+	border: 0 #eee solid;
+	border-right-width: 4px;
+}
+
+#mainCol h2 {
+	padding-top: 55px;
+	margin-top: -55px;
+}
+
+.css-selector {
+	font-family: 'Font Name', serif;
+}
+
+.selected {
+	background-color: #CFD8DC;
+	color: white;
+}
+
+.list-group {
+	margin: 0 0 2em 0;
+	list-style-type: none;
+	padding: 0;
+	width: auto;
+}
+
+.list-group li {
+	cursor: pointer;
+	position: center;
+	left: 0;
+	background-color: #EEE;
+	margin: .5em;
+	padding: .3em 0;
+	height: 2em;
+	border-radius: 6px;
+}
+
+.list-group li.selected:hover {
+	background-color: #d9230f;
+	color: white;
+}
+
+.list-group li:hover li:active {
+	color: white;
+	background-color: #e38171;
+	left: .1em;
+}
+
+.list-group .text {
+	position: center;
+	top: -3px;
+}
+
+.list-group .badge {
+	display: inline-block;
+	font-size: small;
+	color: white;
+	padding: 0.8em 0.7em 0 0.7em;
+	background-color: #283a3e;
+	line-height: 1em;
+	position: center;
+	left: -1px;
+	top: -4px;
+	height: 1.8em;
+	margin-right: .8em;
+	border-radius: 4px 0 0 4px;
+}
+
+.mbr-buttons {
+	position: relative;
+	-webkit-animation-name: example; /* Chrome, Safari, Opera */
+	-webkit-animation-duration: 10s; /* Chrome, Safari, Opera */
+	-webkit-animation-iteration-count: infinite;
+	/* Chrome, Safari, Opera */
+	animation-name: example;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+/* Standard syntax */
+@keyframes example { 0% {left: 0px; top: 0px;}
+                    
+                    50%{left: 0px; top: 100px;}
+					
+					100%{left: 0px; top: 0px;}
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.thumbnail {
+    padding:0px;
+}
+.panel {
+	position:relative;
+}
+.panel>.panel-heading:after,.panel>.panel-heading:before{
+	position:absolute;
+	top:11px;left:-16px;
+	right:100%;
+	width:0;
+	height:0;
+	display:block;
+	content:" ";
+	border-color:transparent;
+	border-style:solid solid outset;
+	pointer-events:none;
+}
+.panel>.panel-heading:after{
+	border-width:7px;
+	border-right-color:#f7f7f7;
+	margin-top:1px;
+	margin-left:2px;
+}
+.panel>.panel-heading:before{
+	border-right-color:#ddd;
+	border-width:8px;
+}
+
+
+
+
+</style>
+
+
+
+<link rel="stylesheet" href="./css/vendor/bootstrap/bootstrap.min.css"></link>
+<link rel="stylesheet" href="./css/messages.css"></link>
+<link rel="stylesheet" href="./css/vendor/bootstrap/bootstrap-social.css"></link>
+
+
+
+<link rel="stylesheet" href="./css/vendor/ng-grid/ng-grid.css"></link>
+<link rel="stylesheet" href="./css/search.css"></link>
+
+<link
+	href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"
+	rel="stylesheet"></link>
+
+
+<!-- TODO needed? -->
+<link href="css/vendor/angularstrap/styles.css" rel="stylesheet"></link>
+
+<link rel="stylesheet" href="./css/vendor/angularstrap/bootstrap-datepicker.css"></link>
+<link rel="stylesheet" href="./css/vendor/angularstrap/bootstrap-timepicker.css"></link>
+
+<!-- <link rel="stylesheet" href="css/vendor/animate/animate.css"> -->
+
+<link rel="stylesheet" type="text/css" href="./css/app.css" ></link>
+<link rel="stylesheet" type="text/css" href="./css/angular-spinkit.min.css" ></link>
+
+
+<script src="js/vendor/modernizr/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+
+
+<!-- Home Page Lib -->
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:700,400&amp;subset=cyrillic,latin,greek,vietnamese"></link>
+
+<link rel="stylesheet" href="./assets/animate.css/animate.min.css"></link>
+<link rel="stylesheet" href="./assets/socicon/css/socicon.min.css"></link>
+<link rel="stylesheet" href="./assets/mobirise/css/style.css"></link>
+<link rel="stylesheet" href="./assets/mobirise-slider/style.css"></link>
+
+<link rel="stylesheet" href="./assets/mobirise/css/mbr-additional.css" type="text/css"></link>
+	<link rel="stylesheet" href="./assets/toast/ngToast.min.css" type="text/css"></link>
+		<link rel="stylesheet" href="./assets/toast/ngToast-animations.min.css" type="text/css"></link>
+		<link rel="stylesheet" href="./css/AdminLTE.min.css" type="text/css"></link>
+		<link rel="stylesheet" href="./css/btnUpload.min.css" type="text/css"></link>
+		  <link rel="stylesheet" href="./css/app.css"></link>
+  <link rel="stylesheet" href="./css/animations.css"></link>
+  <link rel="stylesheet" href="./js/cloudinary/app.css"></link>
+  
+
+</head>
+
+
+<body >
+<div ng-app="myApp"  >
+
+<route-loading-indicator></route-loading-indicator> 
+<toast></toast>
+	<!--[if lt IE 7]>
+<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="//browsehappy.com/">upgrade
+    your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
+    improve your experience.</p>
+<![endif]-->
+
+	<!-- bootstrap navbar -->
+
+
+	<div id="topbr" ng-include="'partials/navbar-top.html'" ng-controller="UserController as ctrl" > </div>
+
+
+<!-- 	<div ng-model="visib" ng-show="visib"> -->
+<!-- 		<div ng-include="'partials/homePage.html'"></div> -->
+<!-- 	</div> -->
+<!-- 	<div ng-model="visib" ng-show="true"> -->
+	
+			<div id="leftbr" class="col-md-2" style="margin-top: 100px; margin-left: 40px">
+				<div ng-include="'partials/navbar-left.html'"></div>
+			</div>
+			<div id="homepg" class="col-md-7">
+				<div style="margin-top: 50px">
+					<!-- ng routes hook -->
+					<div ng-view="ng-view"></div>
+
+                </div>
+			</div>
+			
+			<div  id="rightCol" class="col-md-3">
+			</div>
+
+				<!-- footer 	<div >
+
+
+		
+		<div ng-include="'partials/navbar-bottom.html'"></div>
+	</div>-->
+	
+	</div>
+	<script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+<!-- 	<script>window.jQuery || document.write('<script src="//code.jquery.com/jquery-1.10.2.min.js"><\/script>')</script> -->
+
+	<script src="./js/vendor/bootstrap/bootstrap.min.js"></script>
+
+	<!-- TODO localize -->
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+	<!-- <script src="//angular-ui.github.com/lib/bootstrap/docs/assets/js/bootstrap.min.js"></script> -->
+
+  <script src="../bower_components/angular/angular.js"></script>
+
+	<script type="text/javascript" src="./js/translate/angular-translate.js"></script>
+	<script
+		src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-cookies.js"></script>
+		<script
+		src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-animate.js"></script>
+		
+
+
+  <script src="./bower_components/lodash/lodash.js"></script>
+  <script src="./bower_components/cloudinary-core/cloudinary-core.js"></script>
+  <!-- angular file upload -->
+  <script src="./bower_components/ng-file-upload/ng-file-upload-shim.js"></script>
+  <!-- angular dependencies -->
+
+  <script src="./bower_components/angular-animate/angular-animate.js"></script>
+  <script src="./bower_components/angular-route/angular-route.js"></script>
+  <script src="./bower_components/angular-resource/angular-resource.js"></script>
+  <!-- cloudinary angular plugin -->
+  <script src="./bower_components/cloudinary_ng/js/angular.cloudinary.js"></script>
+  <!-- angular file upload -->
+  <script src="./bower_components/ng-file-upload/ng-file-upload.js"></script>
+  <!-- application code -->
+  <script src="./js/app.js"></script>
+  <script src="./js/cloudinary/config.js"></script>
+  <script src="./js/cloudinary/animations.js"></script>
+  <script src="./js/cloudinary/controllers.js"></script>
+  <script src="./js/cloudinary/services.js"></script>
+  
+		
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate-storage-cookie/2.8.1/angular-translate-storage-cookie.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate-storage-local/2.8.1/angular-translate-storage-local.js"></script>
+
+	<script
+		src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.10/angular-route.js"></script>
+
+
+
+	<script src="./js/vendor/angularui/angular-ui.js"></script>
+
+	<script src="./js/vendor/ng-grid/ng-grid.js"></script>
+
+
+
+
+
+	<!-- TODO needed?  Then localize... -->
+	<script
+		src="//angular-ui.github.com/bootstrap/ui-bootstrap-tpls-0.1.0-SNAPSHOT.js"></script>
+
+	<!-- for ui notifications -->
+	<script src="./js/notificationManager.js"></script>
+
+	<!-- enables rendering of injected html -->
+	<!-- TODO localize -->
+	<script src="http://code.angularjs.org/1.0.1/angular-sanitize-1.0.1.js"></script>
+
+	<!-- angular strap -->
+	<!-- TODO move from cdn to local -->
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.4.4/underscore-min.js"></script>
+
+	<!-- ACE Editor -->
+	<script src="./js/vendor/ui-ace/ace.js"></script>
+	<script src="./js/vendor/ui-ace/ui-ace.js"></script>
+	<!-- <script src="https://raw.github.com/ajaxorg/ace-builds/master/src/theme-xcode.js"></script> -->
+
+	<!-- TODO consider using NPM/Bower to install third party libs -->
+
+	<!-- TODO needed? -->
+	<script
+		src="//cdnjs.cloudflare.com/ajax/libs/prettify/r224/prettify.js"></script>
+	<script src="./js/vendor/angularstrap/angular-strap.min.js"></script>
+	<script src="./js/vendor/angularstrap/bootstrap-datepicker.js"></script>
+	<script src="./js/vendor/angularstrap/bootstrap-timepicker.js"></script>
+
+	<!--  TODO compile/optimise these during build -->
+	<script src="./js/app.js"></script>
+	<script src="./js/services/services.js"></script>
+
+	<script src="./js/filters/filters.js"></script>
+
+	<script src="./js/directives/fadeInDirective.js"></script>
+	<script src="./js/directives/stopEventDirective.js"></script>
+
+	<script src="./js/directives/notifications/notyDirective.js"></script>
+
+	<!-- example area for ui elements (non-production) -->
+	<script src="./playground/playground.js"></script>
+
+	<script type="text/javascript"
+		src="./js/vendor/noty-2.1.0/js/noty/jquery.noty.js"></script>
+
+	<script type="text/javascript"
+		src="./js/vendor/noty-2.1.0/js/noty/layouts/bottomRight.js"></script>
+
+	<script type="text/javascript"
+		src="./js/vendor/noty-2.1.0/js/noty/themes/nucleus.js"></script>
+	<script type="text/javascript" src="./js/glyphicon.js"></script>
+			<script type="text/javascript" src="./js/angular-spinkit.min.js"></script>
+		<script type="text/javascript" src="./js/directives/spinkit.js"></script>
+		<script type="text/javascript" src="./js/angular-disqus.js"></script>
+		<script type="text/javascript" src="./js/UserController.js"></script>
+		<script type="text/javascript" src="./js/controller/user_controller.js"></script>
+		<script type="text/javascript" src="./js/jquery-waiting.js"></script>
+
+	<!-- Home Page JS -->
+
+
+
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="./assets/smooth-scroll/SmoothScroll.js"></script>
+	<script src="./assets/jarallax/jarallax.js"></script>
+	<script src="./assets/masonry/masonry.pkgd.min.js"></script>
+	<script src="./assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="./assets/social-likes/social-likes.js"></script>
+	<script src="./assets/toast/angular-sanitize.min.js"></script>
+	<script src="./assets/toast/ngToast.min.js"></script>
+	<script src="./js/uploadFile.js"></script>
+	<script src='./js/angular-upload.min.js'></script>
+	<script src="https://code.ospry.io/v1/ospry.js"></script>
+	<script src='./js/controller/profile_user.js'></script>
+
+
+
+
+
+	<!-- TODO localize -->
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+
+
+</body>
+</html>

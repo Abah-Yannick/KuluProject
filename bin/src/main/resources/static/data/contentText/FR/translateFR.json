@@ -1,0 +1,12 @@
+[
+
+  {
+    "LANG": "FR",
+    "TITLE": "Salut",
+    "FOO": "Ceci est un Paragraphe.",
+    "BUTTON_LANG_EN": "englais",
+    "BUTTON_LANG_FR": "français",
+        "USERPROFILE":"Profile Utilisateur",
+        "CHANGEPWD":"Changer le mot de passe"
+  }
+]
