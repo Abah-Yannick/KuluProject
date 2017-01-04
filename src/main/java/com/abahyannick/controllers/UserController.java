@@ -24,7 +24,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.abahyannick.models.FileUpload;
 import com.abahyannick.models.User;
-import com.abahyannick.repositories.FileUploadRepository;
 import com.abahyannick.repositories.UserRepository;
 import com.abahyannick.services.PasswordService;
 import com.fasterxml.jackson.core.JsonGenerationException;
