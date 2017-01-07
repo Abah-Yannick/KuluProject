@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.abahyannick.models.FileUpload;
-import com.abahyannick.models.User;
+import com.abahyannick.DAO.FileUpload;
+import com.abahyannick.DAO.User;
 import com.abahyannick.repositories.UserRepository;
 
 @CrossOrigin

@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import com.abahyannick.models.CourArgs;
+import com.abahyannick.DAO.CourArgs;
 
 public interface CourArgsRepository extends JpaRepository<CourArgs, Integer>{
 	

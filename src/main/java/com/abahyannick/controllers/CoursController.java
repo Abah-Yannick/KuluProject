@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.abahyannick.models.Cours;
+import com.abahyannick.DAO.Cours;
 import com.abahyannick.repositories.CoursRepository;
 
 @Component

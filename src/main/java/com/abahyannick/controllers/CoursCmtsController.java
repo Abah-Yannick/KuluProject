@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.abahyannick.models.CoursCmts;
-import com.abahyannick.models.ReplyCmts;
+import com.abahyannick.DAO.CoursCmts;
+import com.abahyannick.DAO.ReplyCmts;
 import com.abahyannick.repositories.CoursCmtsRepository;
 import com.abahyannick.repositories.ReplyCmtsRepository;
 

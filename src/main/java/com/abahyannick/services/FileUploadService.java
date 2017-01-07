@@ -3,7 +3,7 @@ package com.abahyannick.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.abahyannick.models.FileUpload;
+import com.abahyannick.DAO.FileUpload;
 import com.abahyannick.repositories.FileUploadRepository;
 
 @Service

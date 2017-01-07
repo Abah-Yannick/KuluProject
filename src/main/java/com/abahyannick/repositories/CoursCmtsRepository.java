@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.abahyannick.models.CoursCmts;
+import com.abahyannick.DAO.CoursCmts;
 
 public interface CoursCmtsRepository extends JpaRepository<CoursCmts, Integer>{
 	

@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import org.springframework.stereotype.Component;
 
-import com.abahyannick.models.Task;
+import com.abahyannick.DAO.Task;
 
 @RepositoryRestResource
 @Component

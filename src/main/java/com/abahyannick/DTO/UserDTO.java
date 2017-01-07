@@ -1,5 +1,7 @@
 package com.abahyannick.DTO;
 
+import java.io.Serializable;
+
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -8,7 +10,8 @@ import com.abahyannick.annotation.PasswordMatches;
 import com.abahyannick.annotation.ValidEmail;
 
 @PasswordMatches
-public class UserDTO {
+public class UserDTO implements Serializable{
+
 
 
 	@ValidEmail

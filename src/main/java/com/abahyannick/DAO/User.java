@@ -1,4 +1,4 @@
-package com.abahyannick.models;
+package com.abahyannick.DAO;
 
 
 import java.io.Serializable;
